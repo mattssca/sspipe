@@ -1,8 +1,9 @@
 #!/bin/bash
 
-for sample in `ls /home/mattsada/Desktop/GIAB/strand-seq/DATA/PE/aligned/*.sam`
+for sample in `ls /DATA/sam/*.sam`
 do
-dir="/home/mattsada/Desktop/GIAB/strand-seq/DATA/PE/aligned/"
+dir="/DATA/sam/"
 base=$(basename $sample ".sam")
-samtools view -bS ${dir}/${base}.sam > ${dir}/${base}.bam
+out="/DATA/bam"
+samtools view -bS ${dir}/${base}.sam > ${out}/${base}.bam
 done

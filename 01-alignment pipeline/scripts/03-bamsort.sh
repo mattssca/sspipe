@@ -1,8 +1,9 @@
 #!/bin/bash
 
-for sample in `ls /home/mattsada/Desktop/GIAB/strand-seq/DATA/unsorted/*.bam`
+for sample in `ls DATA/bam/*.bam`
 do
-dir="/home/mattsada/Desktop/GIAB/strand-seq/DATA/unsorted/"
+dir="/DATA/bam/"
 base=$(basename $sample ".bam")
-samtools sort ${dir}/${base}.bam > ${dir}/${base}sorted.bam
+out="/DATA/sorted/"
+samtools sort ${dir}/${base}.bam ${out}/${base}.sorted
 done

@@ -1,8 +1,9 @@
 #!/bin/bash
 
-for sample in `ls /home/mattsada/Desktop/GIAB/strand-seq/DATA/sam/*.sam`
+for sample in `ls DATA/mdup*.bam`
 do
-dir="/home/mattsada/Desktop/GIAB/strand-seq/DATA/mdup/"
+dir="/DATA/mdup"
+out="/metrics/flagstat/"
 base=$(basename $sample ".bam")
-samtools flagstat ${dir}/${base}.bam
+samtools flagstat ${dir}/${base}.bam > ${out}/${base}.flagstat.txt
 done
