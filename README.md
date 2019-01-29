@@ -10,4 +10,4 @@ This pipeline consists of three individual smaller pipelines. For instructions o
   
 ### 1. Alignment pipeline
 
-This first pipeline takes raw sequence data (.fastq) and aligns it to a reference genome using Bowtie2. Aligned reads (.sam) are then coverted into binary alignment file (.bam) using *samtools*. Reads are then sorted by left most coordinate, also using *samtools*. Duplicate reads are then marked in alignment data, calling `MarkDuplicates` function of *picardtools* and duplicate reads are defined as originating from a single fragment of DNA. Next, *samtools* is used to index sorted reads.
+This first pipeline takes raw sequence data (.fastq) and aligns it to a reference genome using Bowtie2. Aligned reads (.sam) are then coverted into binary alignment file (.bam) using **samtools**. Reads are then sorted by left most coordinate, also using **samtools**. Duplicate reads are then marked in alignment data, calling `MarkDuplicates` function of **picardtools** and duplicate reads are defined as originating from a single fragment of DNA. Next, **samtools** is used to index sorted reads.
