@@ -9,3 +9,4 @@ This pipeline consists of three individual smaller pipelines. For instructions o
 3. [Phasing](https://github.com/mattsada/sspipe/tree/master/03-phasing%20pipeline)
   
 ### 1. Alignment pipeline
+![alt text](https://github.com/mattsada/sspipe/blob/master/01-alignment%20pipeline/alignmentpipe_alignqc%20.pdf "alignment pipeline")
