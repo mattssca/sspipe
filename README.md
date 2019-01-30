@@ -13,6 +13,8 @@ For instructions on how to execute, see section [How to execute]()
 ## 1. Alignment pipeline
 This first pipeline takes raw sequence data (.fastq) and aligns it to a reference genome using Bowtie2. Aligned reads (.sam) are then coverted into binary alignment file (.bam) using **samtools**. Reads are then sorted by left most coordinate, also using **samtools**. Duplicate reads are then marked in alignment data (information extracted as `mdup-metrics.txt`), calling `MarkDuplicates` function of **picardtools** (Duplications are defined as originating from a single fragment of DNA). Next, **samtools** is used to index sorted reads. Alignment data, together with its corresponding index information is then piped to to be analysed with **BAIT**. Additional alignment metrics are retreived using the `flagstat` function of **samtools** and `CollectAlignmentMetrics` function of **picardools**. Alignment metrics are then compiled and standard data manipulation/subsetting is performed using custom **R** script. Lastly, relevant alignment metrics are plotted and visualized in **R**.
 
+![alt text](https://github.com/mattsada/sspipe/blob/master/figs/alignmentpipe_alignqc.png "alignmentpipe")
+
 #### Dependencies
 Complete list of depenencies for executing pipeline. 
 
