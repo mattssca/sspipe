@@ -30,7 +30,7 @@ A complete list of depenencies for executing pipeline.
 | ggplot2       | 3.1.0          |
 
 ## 2. Inversion analysis pipeline
-The pipeline starts with an R-script that takes bed files generated from previous BAIT analysis (on selected libraries) and locates putative inversions using **InvertR** R package. List of regions to be analyzed needs to be included (regions.txt). The second script concatenates chromosome specific ROI files outputted by **InvertR** into a single ROI list, including all chromosomes. Next, custom R-script subsets data in ROI file into two separate files; Always-Watson-Crick (AWC) and Not-Always-Watson-Crick (NAWC) ROI, depending on Watson/Crick ratio. using **dplyr** package in R. The next script uses `intersect` function of **bedtools** package to filter out all variants in NAWC that are overlapping with events in the AWC file. Variants larger than 15MB are filtered out, using the `filter` function from **bedtools* package. Refined events are then sorted on the leftmost coordinate and outputs a final list of refined inversions in .bed format. The very last script cleans the environment and removes unnecessary files.
+The pipeline starts with an R-script that takes bed files generated from previous BAIT analysis (on selected libraries) and locates putative inversions using **InvertR** R package. List of regions to be analyzed needs to be included (regions.txt). The second script concatenates chromosome specific ROI files outputted by **InvertR** into a single ROI list, including all chromosomes. Next, custom R-script subsets data in ROI file into two separate files; Always-Watson-Crick (AWC) and Not-Always-Watson-Crick (NAWC) ROI, depending on Watson/Crick ratio. using **dplyr** package in R. The next script uses `intersect` function of **bedtools** package to filter out all variants in NAWC that are overlapping with events in the AWC file. Variants larger than 15MB are filtered out, using the `filter` function from **bedtools** package. Refined events are then sorted on the leftmost coordinate and outputs a final list of refined inversions in .bed format. The very last script cleans the environment and removes unnecessary files.
 
 ![alt text](https://github.com/mattsada/sspipe/blob/master/figs/inversionpipeline_invref.png "inversion")
 
@@ -51,6 +51,8 @@ First breakpoints in strand-seq data are located using the **brakpointR**  R-pac
 ![alt text](https://github.com/mattsada/sspipe/blob/master/figs/haplotype_meioticbp.png "haplotype")
 
 #### Dependencies
+A complete list of depenencies for executing pipeline. 
+
 | Package       | Version        |
 | ------------- |---------------:|
 | strandphaseR  | 0.1            |
