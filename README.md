@@ -32,6 +32,8 @@ Complete list of depenencies for executing pipeline.
 ## 2. Inversion analysis pipeline
 Pipeline starts with a R-script that takes bed files generated from previous BAIT analysis (on selected libraries) and locates putative inversions using **InvertR** R package. List of regions to be analysed needs to be included (regions.txt). The second script concatenates chromosome specific ROI files outputted by **InvertR** into a single ROI list, including all chromosomes. Next, custom R-script subsets data in ROI file into two seperate files; Always-Watson-Crick (AWC) and Not-Always-Watson-Crick (NAWC) ROI, depending on Watson/Crick ratio. using **dplyr** package in R. The next script uses `intersect` function of **bedtools** package to filter out all variants in NAWC that are overlapping with events in the AWC file. Variants larger than 15MB are filtered out, using the `filter` function from **bedtools* package. Refined events are then sorted on the leftmost coordinate and outputs final list of refined inversions in .bed format. The very last script cleans the enviroment and removes unnecessary files.
 
+![alt text](https://github.com/mattsada/sspipe/blob/master/figs/inversionpipeline_invref.png "inversion")
+
 #### Dependencies
 Complete list of depenencies for executing pipeline. 
 
@@ -45,6 +47,8 @@ Complete list of depenencies for executing pipeline.
 
 ## 3. Phasing pipeline
 First breakpoints in strand-seq data are located using the **brakpointR**  R-package. .Rdat files outputed by breakpointR are used for determining regions of W/C regions in multiple strand-seq libraries. Next, custom R-script that analyses selected strand-seq libraries for W/C regions is executed outputed (.csv) will be used as input for strandPhase.R script.Next, strandPhaseR algorithm is executed on selected libraries to build whole-genome haplotypes. If parental libraries are available and included, the last two R-scripts will perform a pairwise comparison of each child's homolog to both the maternal and paternal homologs and visualizing meiotic breakpoints.
+
+![alt text](https://github.com/mattsada/sspipe/blob/master/figs/haplotype_meioticbp.png "haplotype")
 
 #### Dependencies
 | Package       | Version        |
