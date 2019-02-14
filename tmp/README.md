@@ -1,1 +1,1 @@
-README.md
+tmp folder, files in this fodler will be deleted after completion of pipeline. 

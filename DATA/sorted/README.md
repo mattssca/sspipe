@@ -1,1 +1,1 @@
-README.md
+subfodler containing sorted alignment read data. 

@@ -1,1 +1,1 @@
-README.md
+folder to store reference genomic data. 

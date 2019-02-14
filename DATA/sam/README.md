@@ -1,1 +1,1 @@
-README.md
+subfodler containingalignment data in sam format.

@@ -1,1 +1,1 @@
-README.md
+Contains Region of Interest (ROI) files from InvertR analysis. ROI files are subject for refinement of putative inversion calls.

@@ -1,1 +1,1 @@
-README.md
+subfodler containing after duplicate reads have been marked. 

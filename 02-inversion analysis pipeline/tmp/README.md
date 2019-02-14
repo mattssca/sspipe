@@ -1,1 +1,1 @@
-README.md
+Folder to store temporary files (all files in this fodler will be removed after execution of pipeline).

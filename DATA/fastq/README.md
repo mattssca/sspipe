@@ -1,1 +1,1 @@
-README.md
+raw reads in .fastq format. individual folders for paired-end and single-end read data.

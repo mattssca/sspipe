@@ -1,1 +1,1 @@
-README.md
+subfodler containing paired-end raw read data. 

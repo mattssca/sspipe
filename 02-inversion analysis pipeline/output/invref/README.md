@@ -1,1 +1,1 @@
-README.md
+Refined inversions stored as .bed files for visualization in UCSC/igv genome browser.

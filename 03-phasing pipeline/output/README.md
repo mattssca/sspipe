@@ -1,1 +1,1 @@
-README.md
+Folder that contains output files from executing **Haplotype analysis and mapping meiotic recombination breakpionts**.

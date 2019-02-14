@@ -1,1 +1,1 @@
-README.md
+output from BreakpintR analysis. `.Rdat` files will be used to identify WC regions in selected libraries se [02-printWCrefions.R](https://github.com/mattsada/sspipe/blob/master/03-phasing%20pipeline/scripts/02-printWCregions.R) for more information.

@@ -1,1 +1,1 @@
-README.md
+A set of scripts (bash, R) for executing the **inversion analysis and refinement of putative inversions** pipeline. For mor info on each script, click [here](https://github.com/mattsada/sspipe/blob/master/02-inversion%20analysis%20pipeline/README.md)

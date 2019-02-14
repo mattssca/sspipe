@@ -1,1 +1,1 @@
-README.md
+output from Strandp[haseR analysis.

@@ -1,1 +1,1 @@
-README.md
+Contains output of inversion analysis and refinement of putative inversions. 

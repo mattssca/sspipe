@@ -1,1 +1,1 @@
-README.md
+set of folders that stores alignment data. For full description se pipeline explenation. 

@@ -1,1 +1,1 @@
-README.md
+Subfolder to store dependencies for executing the **inversion analysis and refinement of putative inversions** pipeline. Contains `regions.txt` that contains all regions to be analyzed. Tab seperated .txt file with: CHR START END defined.

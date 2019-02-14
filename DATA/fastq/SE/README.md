@@ -1,1 +1,1 @@
-README.md
+subfodler containing single-end raw read data. 

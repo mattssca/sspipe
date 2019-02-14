@@ -1,1 +1,1 @@
-README.md
+A set of scripts (bash, R) for executing the **Haplotype analysis and mapping meiotic recombination breakpoints** pipeline. For mor info on each script, click [here](https://github.com/mattsada/sspipe/blob/master/03-phasing%20pipeline/README.md)
