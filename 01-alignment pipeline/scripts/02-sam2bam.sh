@@ -1,9 +1,9 @@
 #!/bin/bash
 
-for sample in `ls /DATA/sam/*.sam`
+for sample in `ls ./DATA/sam/*.sam`
 do
-dir="/DATA/sam/"
+dir="./DATA/sam/"
 base=$(basename $sample ".sam")
-out="/DATA/bam"
+out="./DATA/bam"
 samtools view -bS ${dir}/${base}.sam > ${out}/${base}.bam
 done
