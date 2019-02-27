@@ -60,7 +60,12 @@ A complete list of depenencies for executing pipeline.
 | dplyr         | 0.7.8          |
 
 ## How to Execute
-Clone repository and put raw reads in .fastq format in subfolder DATA/fastq. Download reference genome (both bowtie2 formatted and in .fa format). For fast access, see links below. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline and regions to be analyzed with invertR etc.)
+1. Clone repository and put raw reads in .fastq format in subfolder DATA/fastq. 
+2. Download reference genome (both bowtie2 formatted and in .fa format). For fast access, see links below. 
+3. cd main directory (sspipe-master)
+4. (User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.))
+5. For each pipeline, execute corresponding master script located in the 'script' folder under each pipeline. 
+
 
 1. [bowtie2 formatted reference genome GRCh38]()
 2. [reference genome in .fa format]() 
