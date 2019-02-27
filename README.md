@@ -1,6 +1,6 @@
 ## Overview
 
-This repository contains custom pipeline for going from raw reads in .fastq format all the way to aligned reads, locating putative inversions and refinement of the same and phasing of structural variants in Strand Seq genomic data. The pipeline also exports relevant metrics for the alignment and custom R-scripts for visualizing these metrics are also included [example figure](https://github.com/mattsada/sspipe/blob/master/01-alignment%20pipeline/alignment_sumQC-example.pdf). 
+This repository contains custom pipeline for going from raw reads in .fastq format all the way to aligned reads, locating putative inversions and refinement of the same and phasing of structural variants in Strand Seq genomic data. The pipeline also exports relevant metrics for the alignment and custom R-scripts for visualizing these metrics are also included, see [example figure](https://github.com/mattsada/sspipe/blob/master/01-alignment%20pipeline/alignment_sumQC-example.pdf). 
 
 This pipeline consists of three individual smaller pipelines. 
 
