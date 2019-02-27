@@ -6,7 +6,7 @@ dir="/DATA/sorted/"
 dirout="/DATA/mdup/"
 out="/metrics/mdup/"
 base=$(basename $sample ".bam")
-java -jar picard.jar MarkDuplicates \
+picard MarkDuplicates \
 I= ${dir}/${base}.bam \
 O= ${dirout}/${base}.mdup \
 M= ${out}/${base}.mdup.txt
