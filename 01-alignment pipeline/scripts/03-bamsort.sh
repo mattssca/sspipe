@@ -1,9 +1,9 @@
 #!/bin/bash
 
-for sample in `ls DATA/bam/*.bam`
+for sample in `ls ./DATA/bam/*.bam`
 do
-dir="/DATA/bam/"
+dir="./DATA/bam/"
 base=$(basename $sample ".bam")
-out="/DATA/sorted/"
+out="./DATA/sorted/"
 samtools sort ${dir}/${base}.bam ${out}/${base}.sorted
 done
