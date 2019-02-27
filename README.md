@@ -66,7 +66,7 @@ A complete list of depenencies for executing pipeline.
 4. (User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.))
 5. For each pipeline, execute corresponding master script located in the 'script' folder under each pipeline. 
 
-
+## Reference genomes (GRCh38):
 1. [bowtie2 formatted reference genome GRCh38]()
 2. [reference genome in .fa format]() 
 
