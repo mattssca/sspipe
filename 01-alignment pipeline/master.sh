@@ -19,7 +19,7 @@ echo "06-align-met-picard.sh executed succesfully"
 echo "07-align-met-flagstat.sh executed succesfully"
 ./01-alignment\ pipeline/scripts/08-insert-size-picard.sh
 echo "08-insert-size-picard.sh executed succesfully"
-./01-alignment\ pipeline/scripts/09-gc-content.sh
+./01-alignment\ pipeline/scripts/09-gc-bias-picard.sh
 echo "09-gc-content.sh executed succesfully"
 ./01-alignment\ pipeline/scripts/10-BAIT.sh
 echo "10-BAIT.sh executed succesfully"
