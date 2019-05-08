@@ -61,7 +61,7 @@ A complete list of depenencies for executing pipeline.
 
 ## How to Execute
 1. Clone repository! 
-2. Put raw reads (unzipped .fastq) in coresponding subfolder. For paired-end data ´./DATA/fastq/PE´ for single-end data ´./DATA/fastq/SE.´
+2. Put raw reads (unzipped .fastq) in coresponding subfolder. For paired-end data `./DATA/fastq/PE` for single-end data `./DATA/fastq/SE.`
 2. cd main directory (sspipe-master).
 3. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](). 
 3. Make scripts executable (chmod u+x ./script_name.sh)
