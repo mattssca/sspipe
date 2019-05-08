@@ -63,14 +63,11 @@ A complete list of depenencies for executing pipeline.
 1. Clone repository! 
 2. Put raw reads (unzipped .fastq) in coresponding subfolder. For paired-end data ´./DATA/fastq/PE´ for single-end data ´./DATA/fastq/SE.´
 2. cd main directory (sspipe-master).
-3. Download reference genome, see comment bellow. 
+3. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](). 
 3. Make scripts executable (chmod u+x ./script_name.sh)
 4. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.)
 5. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
 
 ## Reference genomes (GRCh38):
-  #### Option 1 
   1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
   2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
-  #### Option 2
-  Execute [get_refseq.sh]()
