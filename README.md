@@ -60,16 +60,17 @@ A complete list of depenencies for executing pipeline.
 | dplyr         | 0.7.8          |
 
 ## How to Execute
-1. Clone repository and put raw reads in .fastq format in subfolder DATA/fastq.
-2. cd main directory (sspipe-master)
-3. Download reference genome (both bowtie2 formatted and in .fa format). For fast access, see links below. 
-3. (Optional, execute [enviro_setup.sh](https://github.com/mattsada/sspipe/blob/master/enviro_setup.sh))
-3. make scripts executable (chmod u+x ./script_name.sh)
+1. Clone repository! 
+2. Put raw reads (unzipped .fastq) in coresponding subfolder. For paired-end data ´./DATA/fastq/PE´ for single-end data ´./DATA/fastq/SE.´
+2. cd main directory (sspipe-master).
+3. Download reference genome, see comment bellow. 
+3. Make scripts executable (chmod u+x ./script_name.sh)
 4. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.)
 5. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
 
 ## Reference genomes (GRCh38):
+ # Option 1 
 1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
-2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz) 
-
-
+2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
+# Option 2
+    Execute [get_refseq.sh]()
