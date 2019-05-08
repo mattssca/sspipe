@@ -8,7 +8,7 @@ This pipeline consists of three individual smaller pipelines.
 2. [Locating putative inversions and refinement of variant calls](https://github.com/mattsada/sspipe/tree/master/02-inversion%20analysis%20pipeline)
 3. [Haplotype Phasing](https://github.com/mattsada/sspipe/tree/master/03-phasing%20pipeline)
 
-For instructions on how to execute, see section [How to execute]()
+For instructions on how to execute, see section [How to execute](https://github.com/mattsada/sspipe#how-to-execute)
   
 ## 1. Alignment and Quality control
 This first pipeline takes raw sequence data (.fastq) and aligns it to a reference genome using Bowtie2. Aligned reads (.sam) are then converted into binary alignment file (.bam) using **samtools**. Reads are then sorted by left most coordinate, also using **samtools**. Duplicate reads are then marked in alignment data (information extracted as `mdup-metrics.txt`), calling `MarkDuplicates` function of **picardtools** (Duplications are defined as originating from a single fragment of DNA). Next, **samtools** is used to index sorted reads. Alignment data, together with its corresponding index information is then piped to be analyzed with **BAIT**. Additional alignment metrics are retrieved using the `flagstat` function of **samtools** and `CollectAlignmentMetrics` function of **picardools**. Alignment metrics are then compiled and standard data manipulation/subsetting is performed using custom **R** script. Lastly, relevant alignment metrics are plotted and visualized in **R**.
