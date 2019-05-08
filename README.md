@@ -69,8 +69,8 @@ A complete list of depenencies for executing pipeline.
 5. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
 
 ## Reference genomes (GRCh38):
- # Option 1 
-1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
-2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
-# Option 2
-    Execute [get_refseq.sh]()
+  #### Option 1 
+  1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
+  2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
+  ### Option 2
+  Execute [get_refseq.sh]()
