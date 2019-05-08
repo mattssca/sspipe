@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 This repository contains custom pipelines for going from raw reads in .fastq format all the way to aligned reads, locating putative inversions and refinement of the same and phasing of structural variants in Strand Seq genomic data. The pipeline also exports relevant metrics for the alignment and custom R-scripts for visualizing these metrics are also included. 
 
@@ -15,49 +15,15 @@ This first pipeline takes raw sequence data (.fastq) and aligns it to a referenc
 
 ![alt text](https://github.com/mattsada/sspipe/blob/master/figs/flowcharts/alignmentpipe_alignqc.png "alignmentpipe")
 
-#### Dependencies
-A complete list of depenencies for executing pipeline. 
-
-| Package       | Version        |
-| ------------- |---------------:|
-| samtools      | 0.1.19-44428cd |
-| bowtie2       | 2.2.3          |
-| picard        | 2.18.11        |
-| BAIT          | 1.0            |
-| R             | 3.5.2          |
-| dplyr         | 0.7.8          |
-| tidyverse     | 1.2.0          |
-| ggplot2       | 3.1.0          |
-
 ## 2. Locating putative inversions and refinement of variant calls
 The pipeline starts with an R-script that takes bed files generated from previous BAIT analysis (on selected libraries) and locates putative inversions using **InvertR** R package. List of regions to be analyzed needs to be included (regions.txt). The second script concatenates chromosome specific ROI files outputted by **InvertR** into a single ROI list, including all chromosomes. Next, custom R-script subsets data in ROI file into two separate files; Always-Watson-Crick (AWC) and Not-Always-Watson-Crick (NAWC) ROI, depending on Watson/Crick ratio. using **dplyr** package in R. The next script uses `intersect` function of **bedtools** package to filter out all variants in NAWC that are overlapping with events in the AWC file. Variants larger than 15MB are filtered out, using the `filter` function from **bedtools** package. Refined events are then sorted on the leftmost coordinate and outputs a final list of refined inversions in .bed format. The very last script cleans the environment and removes unnecessary files.
 
 ![alt text](https://github.com/mattsada/sspipe/blob/master/figs/flowcharts/inversionpipeline_invref.png "inversion")
 
-#### Dependencies
-A complete list of depenencies for executing pipeline. 
-
-| Package       | Version        |
-| ------------- |---------------:|
-| invertR       | 0.1            |
-| R             | 3.5.2          |
-| dplyr         | 0.7.8          |
-| bedtools      | 2.17.0         |
-
-
 ## 3. Haplotype Phasing
 First breakpoints in strand-seq data are located using the **brakpointR**  R-package. .Rdat files outputted by breakpointR are used for determining regions of W/C regions in multiple strand-seq libraries. Next, custom R-script that analyses selected strand-seq libraries for W/C regions are executed outputted (.csv) will be used as input for strandPhase.R script. Next, strandPhaseR algorithm is executed on selected libraries to build whole-genome haplotypes. If parental libraries are available and included, the last two R-scripts will perform a pairwise comparison of each child's homolog to both the maternal and paternal homologs and visualizing meiotic breakpoints.
 
 ![alt text](https://github.com/mattsada/sspipe/blob/master/figs/flowcharts/haplotype_meioticbp.png "haplotype")
-
-#### Dependencies
-A complete list of depenencies for executing pipeline. 
-
-| Package       | Version        |
-| ------------- |---------------:|
-| strandphaseR  | 0.1            |
-| R             | 3.5.2          |
-| dplyr         | 0.7.8          |
 
 ## How to Execute
 1. Clone repository! 
@@ -71,3 +37,24 @@ A complete list of depenencies for executing pipeline.
 ## Reference genomes (GRCh38):
   1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
   2. [reference genome in .fa format](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
+  
+## Dependencies
+A complete list of depenencies for executing pipeline. 
+
+| Package       | Version        |
+| ------------- |---------------:|
+| samtools      | 0.1.19-44428cd |
+| bowtie2       | 2.2.3          |
+| picard        | 2.18.11        |
+| BAIT          | 1.0            |
+| R             | 3.5.2          |
+| dplyr         | 0.7.8          |
+| tidyverse     | 1.2.0          |
+| ggplot2       | 3.1.0          |
+| invertR       | 0.1            |
+| R             | 3.5.2          |
+| dplyr         | 0.7.8          |
+| bedtools      | 2.17.0         |
+| strandphaseR  | 0.1            |
+| R             | 3.5.2          |
+| dplyr         | 0.7.8          |
