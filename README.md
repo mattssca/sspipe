@@ -47,14 +47,10 @@ A complete list of depenencies for executing pipeline.
 | bowtie2       | 2.2.3          |
 | picard        | 2.18.11        |
 | BAIT          | 1.0            |
-| R             | 3.5.2          |
+| breakpointR   | 3.9            |
 | dplyr         | 0.7.8          |
 | tidyverse     | 1.2.0          |
 | ggplot2       | 3.1.0          |
 | invertR       | 0.1            |
-| R             | 3.5.2          |
-| dplyr         | 0.7.8          |
 | bedtools      | 2.17.0         |
 | strandphaseR  | 0.1            |
-| R             | 3.5.2          |
-| dplyr         | 0.7.8          |
