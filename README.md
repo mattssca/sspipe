@@ -29,7 +29,7 @@ First breakpoints in strand-seq data are located using the **brakpointR**  R-pac
 1. Clone repository! 
 2. Put raw reads (gunzipped .fastq) in coresponding subfolder.
 2. cd main directory (sspipe-master).
-3. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](). 
+3. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](https://github.com/mattsada/sspipe/blob/master/refseq/get_refseq.sh). 
 3. Make scripts executable (chmod u+x ./script_name.sh)
 4. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.)
 5. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
