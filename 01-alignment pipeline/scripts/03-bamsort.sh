@@ -5,5 +5,5 @@ do
 dir="./DATA/bam/"
 base=$(basename $sample ".bam")
 out="./DATA/sorted/"
-samtools sort ${dir}/${base}.bam ${out}/${base}.sorted
+samtools sort ${dir}/${base}.bam -o ${out}/${base}.sorted
 done
