@@ -5,18 +5,17 @@ install_github(force = TRUE, 'drashley/InvertR')
 library(InvertR)
 
 #set the working directory to the folder where the data is stored
-setwd("/home/mattsada/Desktop/GIAB/strand-seq/BAIT/BED_files_BAIT/") 
+setwd("./Desktop/DATA/GIAB/NA12878/mdup/BED_files_BAIT/") 
 
 #load dependencies
-roiList <-read.table('/home/mattsada/Desktop/GIAB/strand-seq/InvertR/dependencies/regions.txt') 
+chrtable <-read.table('../../inversion_anlysis/dependencies/regions.txt') 
 
 #run package
-runInvertR(roiList, 
+runInvertR(chrtable, 
            binSize = 50, 
-           WCcutoff = 0.75,
-           dataDirectory = "/home/mattsada/Desktop/GIAB/strand-seq/InvertR/output/", 
-           gapfile = 0, 
-           type = "bed",
+           WCcutoff = 0.75, 
+           dataDirectory = '../../inversion_anlysis/output/', 
+           type = 'bed', 
            dup = TRUE, 
            qual = 10, 
            padding = 0, 
@@ -25,8 +24,6 @@ runInvertR(roiList,
            verbose = TRUE, 
            pdf = TRUE, 
            strand = TRUE, 
-           ROI = FALSE,
-           genotype = TRUE, 
+           ROI = FALSE, 
+           genotype = TRUE,
            findROIs = TRUE)
-  
-  
