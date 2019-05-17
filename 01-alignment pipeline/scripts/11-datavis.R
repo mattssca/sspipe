@@ -113,8 +113,8 @@ runcomments = "First draft of updated quality report v1.3"
   ggsave("alignment_qc.pdf", 
          Alignment_QC,
          path = ./figs/,
-         #scale = 1, 
-         #width = par("din")[1],
-         #height = par("din")[2], 
-         #units = c("in"),
+         scale = 1, 
+         width = 50,
+         height = 20, 
+         units = c("in"),
          dpi = 300)
