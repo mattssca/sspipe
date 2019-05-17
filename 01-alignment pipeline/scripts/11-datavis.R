@@ -109,3 +109,12 @@ runcomments = "First draft of updated quality report v1.3"
   # create grid.arrange object
   Alignment_QC = grid.arrange(alignment_plot, coverage_plot, duplications_dist_plot, nrow = 5, ncol = 4, name = "Quality Report", top = paste0("Quality Report | ", rundate," | ", runsample," | ", platform," | ", se_pe," | ", runcomments), bottom = "Page 1", layout_matrix = rbind(c(1,1,1,1), c(1,1,1,1), c(1,1,1,1), c(2,2,3,3), c(2,2,3,3)))
 
+  # export plot as pdf 
+  ggsave("alignment_qc.pdf", 
+         Alignment_QC,
+         path = ./figs/,
+         #scale = 1, 
+         #width = par("din")[1],
+         #height = par("din")[2], 
+         #units = c("in"),
+         dpi = 300)
