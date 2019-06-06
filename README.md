@@ -54,3 +54,6 @@ A complete list of depenencies for executing pipeline.
 | invertR       | 0.1            |
 | bedtools      | 2.17.0         |
 | strandphaseR  | 0.1            |
+| DNAcopy       | 3.9            |
+| changepoint   | 2.2.2          |
+| GenomicRanges | 3.9            |
