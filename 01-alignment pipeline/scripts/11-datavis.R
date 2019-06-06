@@ -7,7 +7,7 @@ library(gtable)
 library(dplyr)
 library(kableExtra)
 
-setwd("../metrics")
+setwd("./metrics")
 
 # Define run-specs
 rundate = "20190425"
