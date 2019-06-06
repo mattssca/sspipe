@@ -7,7 +7,7 @@ library(data.table)
 genomesize = as.numeric("3099706404")
 
 #set path to directory
-setwd("../alignmentQC_v.1.1/metrics/")
+setwd("./metrics")
 
 ## Mark duplicates
 # List all txt files including sub-folders
