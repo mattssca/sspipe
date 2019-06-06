@@ -6,7 +6,8 @@ library(gridExtra)
 library(gtable)
 library(dplyr)
 library(kableExtra)
-library(tableGrob)
+
+setwd("../metrics")
 
 # Define run-specs
 rundate = "20190425"
@@ -112,7 +113,7 @@ runcomments = "First draft of updated quality report v1.3"
   # export plot as pdf 
   ggsave("alignment_qc.pdf", 
          Alignment_QC,
-         path = ./figs/,
+         path = "../figs/",
          scale = 1, 
          width = 50,
          height = 20, 
