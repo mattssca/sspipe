@@ -9,3 +9,7 @@ gunzip ./refseq/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar
 #download refseq in FASTA format
 wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz -P ./refseq 
 gunzip ./refseq/hg38.fa.gz
+
+#convert bowtie2 formated reference genome back to FASTA for CollectGCBiasMetrics
+bowtie2-inspect './refseq/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index' > ./refseq/bowtie2.GCHr38.fasta
+
