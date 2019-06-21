@@ -11,5 +11,5 @@ I=${dir}/${base}.bam \
 O=${out}/${base}.gc_bias_metrics.txt \
 CHART=${out2}/${base}gc_bias_metrics.pdf \
 S=${out}/${base}.summary_metrics.txt \
-R=./refseq/bowtie2.GCHr38.fasta
+R=./refseq/GRCh38.fasta
 done
