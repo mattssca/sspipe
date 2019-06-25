@@ -114,6 +114,7 @@ runcomments = "First draft of updated quality report v1.3"
   ggsave("alignment_qc.pdf", 
          Alignment_QC,
          path = "../figs/",
+         limitsize = FALSE
          scale = 1, 
          width = 50,
          height = 20, 
