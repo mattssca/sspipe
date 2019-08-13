@@ -83,11 +83,11 @@ alignmentMetrics = alignmentMetrics %>%
 
 # Calculate duplication rates
 alignmentMetrics$DUPLICATIONS <- ((alignmentMetrics$READ_PAIR_DUPLICATES*2) + alignmentMetrics$UNPAIRED_READ_DUPLICATES)
-
+alignmentMetrics$UNIQUE_READS <- ((alignmentMetrics$PF_READS_ALIGNED - alignmentMetrics$DUPLICATIONS))
+                                                 
 # Calculate coverage
 ## coverage (duplicate reads not included)
-alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_NO_DUPLICATES <- (alignmentMetrics$ESTIMATED_LIBRARY_SIZE * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
-#alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_NO_DUPLICATES <- (alignmentMetrics$PF_READS_ALIGNED - alignmentMetrics$DUPLICATIONS) * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
+alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_NO_DUPLICATES <- (alignmentMetrics$UNIQUE_READS * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
 
 ## coverage (duplications included)
 alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_DUPLICATES <- (alignmentMetrics$PF_READS_ALIGNED * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
