@@ -27,12 +27,13 @@ First breakpoints in strand-seq data are located using the **brakpointR**  R-pac
 
 ## How to Execute
 1. Clone repository! 
-2. Put raw reads (gunzipped .fastq) in coresponding subfolder.
-2. cd main directory (sspipe-master).
-3. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](https://github.com/mattsada/sspipe/blob/master/refseq/get_refseq.sh). 
-3. Make scripts executable (chmod u+x ./script_name.sh)
-4. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.)
-5. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
+2. Put raw reads (.fastq) in coresponding subfolder. Note that pipeline also handles gziped fastq files, but file extension needs to be specified in script 01-pe-bowtie2-align.sh and 01-se-bowtie2-align.sh
+3. make sure you have the dependencies set up in your path (i.e picard, samtools, bowite2 etc.)
+4. cd main directory (sspipe-master).
+5. Download reference genome, see comment bellow for download links or, execute [get_refseq.sh](https://github.com/mattsada/sspipe/blob/master/refseq/get_refseq.sh). 
+6. Make scripts executable (chmod u+x ./script_name.sh) or jsut sh -scriptname-
+7. User-provided dependencies go into the corresponding subfolder (such as SNV callset data necessary for haplotype pipeline     and regions to be analyzed with invertR etc.)
+8. For each pipeline, execute corresponding master-script located in the 'script' folder under each pipeline. 
 
 ## Reference genomes (GRCh38):
   1. [bowtie2 formatted reference genome GRCh38](http://ftp.ncbi.nlm.nih.gov/genomes/archive/old_genbank/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh38/seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index.tar.gz)
