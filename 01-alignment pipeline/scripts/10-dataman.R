@@ -7,7 +7,7 @@ library(data.table)
 genomesize = as.numeric("3099706404")
 
 #set path to directory
-setwd("./metrics")
+setwd("./Desktop/tmp/dup-up/")
 
 ## Mark duplicates
 # List all txt files including sub-folders
@@ -85,9 +85,7 @@ alignmentMetrics = alignmentMetrics %>%
 alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE <- (alignmentMetrics$PF_READS_ALIGNED * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
 
 # Calculate duplication rates
-alignmentMetrics$PERCENT_DUPLICATION <- (alignmentMetrics$READ_PAIR_DUPLICATES + alignmentMetrics$UNPAIRED_READ_DUPLICATES)/alignmentMetrics$PF_READS_ALIGNED
-
-alignmentMetrics$DUPLICATIONS <- (alignmentMetrics$READ_PAIR_DUPLICATES + alignmentMetrics$UNPAIRED_READ_DUPLICATES)
+alignmentMetrics$DUPLICATIONS <- ((alignmentMetrics$READ_PAIR_DUPLICATES*2) + alignmentMetrics$UNPAIRED_READ_DUPLICATES)
 
 # Export alignment metrics as data table for further characterization and visualization
 write.table(x = alignmentMetrics, file = "./alignmentmetrics.txt", quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
