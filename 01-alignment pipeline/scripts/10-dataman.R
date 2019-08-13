@@ -71,7 +71,7 @@ alignmentMetrics = select(alignmentMetrics, c(ID,
                                               READ_PAIR_DUPLICATES, 
                                               UNPAIRED_READ_DUPLICATES, 
                                               PERCENT_DUPLICATION, 
-                                              PCT_ADAPTER))
+                                              PCT_ADAPTER, ESTIMATED_LIBRARY_SIZE))
 
 # Convert data.frame to numeric matrix
 alignmentMetrics[2:12] <- lapply(alignmentMetrics[2:12], as.numeric)
@@ -81,11 +81,16 @@ alignmentMetrics = alignmentMetrics %>%
   bind_rows(summarise_all(alignmentMetrics, funs(if(is.numeric(.)) sum(.) else "Total"))) %>%
   bind_rows(summarise_all(alignmentMetrics, funs(if(is.numeric(.)) mean(.) else "Mean")))
 
-# Calculate coverage
-alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE <- (alignmentMetrics$PF_READS_ALIGNED * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
-
 # Calculate duplication rates
 alignmentMetrics$DUPLICATIONS <- ((alignmentMetrics$READ_PAIR_DUPLICATES*2) + alignmentMetrics$UNPAIRED_READ_DUPLICATES)
+
+# Calculate coverage
+## coverage (duplicate reads not included)
+alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_NO_DUPLICATES <- (alignmentMetrics$ESTIMATED_LIBRARY_SIZE * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
+#alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_NO_DUPLICATES <- (alignmentMetrics$PF_READS_ALIGNED - alignmentMetrics$DUPLICATIONS) * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
+
+## coverage (duplications included)
+alignmentMetrics = within(alignmentMetrics, PCT_COVERAGE_DUPLICATES <- (alignmentMetrics$PF_READS_ALIGNED * alignmentMetrics$MEAN_READ_LENGTH)/genomesize)
 
 # Export alignment metrics as data table for further characterization and visualization
 write.table(x = alignmentMetrics, file = "./alignmentmetrics.txt", quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
