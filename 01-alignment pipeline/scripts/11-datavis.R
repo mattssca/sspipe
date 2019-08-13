@@ -25,7 +25,7 @@ remove.list <- paste(c("Total", "Mean"), collapse = '|')
 filt_alignmet = alignmet %>% filter(!grepl(remove.list, ID)) 
 
 # format percentage value
-filt_alignmet$PCT_COVERAGE = filt_alignmet$PCT_COVERAGE * 100
+filt_alignmet$PCT_COVERAGE = filt_alignmet$PCT_COVERAGE_NO_DUPLICATES * 100
 filt_alignmet$PERCENT_DUPLICATION = filt_alignmet$PERCENT_DUPLICATION * 100
 filt_alignmet$PCT_PF_READS = filt_alignmet$PCT_PF_READS * 100
 filt_alignmet$PCT_PF_READS_ALIGNED = filt_alignmet$PCT_PF_READS_ALIGNED * 100
@@ -91,7 +91,7 @@ alignment_plot
 # plot coverage summary
 coverage_plot = ggplot(data = coverage_table, aes(x = coverage_table$ID, y = coverage_table$PCT_COVERAGE, group = 1, label = coverage_table$PCT_COVERAGE)) +
   theme(legend.position = "top", axis.ticks = element_blank(), axis.text.x = element_blank(), panel.grid.minor = element_line(color = "black", linetype = "solid"), panel.grid.major = element_blank(), panel.background = element_blank(), plot.margin = unit(c(1,5,1,2), "lines")) +
-  labs(title = "2. Genomic Coverage", subtitle = "Not excluding highly mappable genomic regions.", x = "Sample", y = "Coverage") +
+  labs(title = "2. Genomic Coverage", subtitle = "Not excluding highly mappable genomic regions (duplicate reads not included)", x = "Sample", y = "Coverage") +
   geom_bar(stat = "identity", fill = colpfa) + 
   geom_hline(yintercept = mean_cov, color=coldup, linetype="dashed")
 
