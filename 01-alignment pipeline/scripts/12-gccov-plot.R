@@ -299,7 +299,7 @@ GC_Coverage_plot = grid.arrange(chr1_plot, chr2_plot, chr3_plot, chr4_plot, chr5
 # export plot as pdf 
 ggsave(pdfout, 
        GC_Coverage_plot,
-       path = "../../",
+       path = "../figs/gc-cov/",
        limitsize = FALSE,
        scale = 1, 
        width = 50,
