@@ -7,7 +7,7 @@ vcf = read.csv(file = "../mattsada/Desktop/GIAB/highconf/NA12878_HG001/vcfhighco
 filtered_vcf = data.frame(vcf$CHROM, vcf$POS)
 
 #export manipulated vcf as .txt file
-write.table(filtered_vcf, file = "./Desktop/GIAB/highconf/NA12878_HG001/up_variants.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(filtered_vcf, file = "./Desktop/GIAB/highconf/NA12878_HG001/up_variants.txt", sep = "\", quote = FALSE, row.names = FALSE)
 
 #bash code for replacing "chr" with ""
 #awk '{gsub(/^chr/,""); print}' up_variants.txt > high_conf_calls.txt
