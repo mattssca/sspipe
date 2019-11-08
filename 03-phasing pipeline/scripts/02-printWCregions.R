@@ -1,4 +1,4 @@
-source("/home/mattsada/Desktop/GIAB/strand-seq/")
+source("./DATA/breakpointR/")
 library(GenomicRanges)
 
 printWCregions <- function(datapath, file=NULL, regionSize=5000000) {
@@ -26,4 +26,4 @@ printWCregions <- function(datapath, file=NULL, regionSize=5000000) {
 	write.table(df2print, file, sep=":", col.names=FALSE, row.names=FALSE, quote=FALSE)
 }
 
-printWCregions("/home/mattsada/Desktop/Analysis/strandPhaseR/180807/dependencies/Rdat/", file="dependencies/wc_regions.txt", regionSize=5000000)
+printWCregions("./DATA/breakpointR/browserfiles/", file="./03-phasing\ pipeline/dependencies/wc_regions.txt", regionSize=5000000)
