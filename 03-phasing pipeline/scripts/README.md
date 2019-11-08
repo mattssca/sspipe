@@ -10,6 +10,6 @@
 
 05. Custom shell script that takes chromosome specific VCF files and merges them into one single file. Sorts events on the leftmost coordinate.
 
-06. **Optional** Custom shell script that filters input VCF to only keep SNV or indels
+06. **Optional** Custom shell script that filters input VCF to only keep SNV or indels.
 
-07 . Performance control. Compares phased variants if overlapping with 'truth' dataset. Returns variants in phased VCF that are present in becnhmark dataset. 
+07. Performance control. Compares phased variants if overlapping with 'truth' dataset. Returns variants in phased VCF that are present in becnhmark dataset. 
