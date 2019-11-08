@@ -26,4 +26,4 @@ printWCregions <- function(datapath, file=NULL, regionSize=5000000) {
 	write.table(df2print, file, sep=":", col.names=FALSE, row.names=FALSE, quote=FALSE)
 }
 
-printWCregions("./DATA/breakpointR/browserfiles/", file="./03-phasing\ pipeline/dependencies/wc_regions.txt", regionSize=5000000)
+printWCregions("./03-phasing\ pipeline/output/breakpointR/browserfiles", file="./03-phasing\ pipeline/dependencies/wc_regions.txt", regionSize=5000000)
