@@ -10,7 +10,7 @@ library(BSgenome.Hsapiens.UCSC.hg38)
 #run strandphaseR: 
 strandPhaseR(inputfolder = "./DATA/trimmed/", 
              outputfolder = "/03-phasing\ pipeline/output/strandphaseR/", 
-             positions = "./03-phasing\ pipeline/dependencies/SNV.bed", 
+             positions = "./03-phasing\ pipeline/dependencies/SNV-man.bed", 
              WCregions = "./03-phasing\ pipeline/dependencies/wc_regions.txt",
 	     exportVCF  =  'spr_output', 
 	     bsGenome  =  'BSgenome.Hsapiens.UCSC.hg38',
