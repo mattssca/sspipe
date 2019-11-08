@@ -15,5 +15,3 @@ strandPhaseR(inputfolder = "./DATA/trimmed/",
 	     exportVCF  =  'spr_output', 
 	     bsGenome  =  'BSgenome.Hsapiens.UCSC.hg38',
 	     pairedEndReads = TRUE)
-
-
