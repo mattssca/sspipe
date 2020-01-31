@@ -1,8 +1,9 @@
 #!/bin/bash
 
-for sample in `ls ./DATA/mdup/*.bam`
+for sample in `ls ./pre/lib/*.bam`
 do
-dir="./DATA/mdup/"
-base=$(basename $sample ".bam")
-samtools index  ${dir}/${base}.bam > ${dir}/${base}.bai
+dir="./pre/lib/"
+basein=$(basename $sample ".bam")
+baseout=$(basename $sample ".bai")
+samtools index  ${dir}/${basein}.bam > ${dir}/${baseout}.bai
 done
