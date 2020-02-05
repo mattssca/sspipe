@@ -1,0 +1,1 @@
+Read data stored in Sequence Alignment Map (SAM) format.

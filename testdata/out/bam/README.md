@@ -1,0 +1,1 @@
+Read data in Binary Alignment Map (BAM) format.

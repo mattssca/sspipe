@@ -1,0 +1,1 @@
+Sorted read data stored in Binary Alignment Map (BAM) format.

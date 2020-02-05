@@ -1,0 +1,1 @@
+Read data after duplicate reads have been marked stored in Binary Alignment Map (BAM) format.
