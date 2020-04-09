@@ -60,4 +60,4 @@ A complete list of depenencies for executing pipeline.
 | GenomicRanges | 3.9            |
 | VCF tools     | 0..15          |
 | BCF tools     | 1.9            |
-| htslib        | 1.9            |
+| htslib        | 1.9.0            |
